@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<!--
+  Shruti Suryawanshi — Portfolio (v2, dark glass theme)
+  ------------------------------------------------------------------
+  WHERE TO EDIT
+  • Colours ........ :root block in <style> (--bg, --accent, --accent-2 ...)
+  • Fonts .......... Google Fonts <link> + --font in :root
+  • Text / links ... edit inside each <section>; social links also in JSON-LD
+  • Avatar ......... replace the "SS" initials in .avatar with an <img>
+  • Screenshots .... look for "REAL IMAGE HERE" comments on project cards
+  • Resume ......... keep resume.pdf in the same folder as this file
+-->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shruti Suryawanshi — WordPress Developer & Technical SEO | Pune</title>
+<meta name="description" content="Shruti Suryawanshi is a WordPress Developer in Pune building fast, SEO-friendly websites with Elementor, WooCommerce, PHP and Java.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Shruti Suryawanshi — WordPress Developer & Technical SEO">
+<meta property="og:description" content="Fast, SEO-friendly WordPress websites, custom themes and full-stack development.">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0b1220">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Shruti Suryawanshi","jobTitle":"WordPress Developer","email":"mailto:shrutisuryawanshi072001@gmail.com","telephone":"+91 9322423847","address":{"@type":"PostalAddress","addressLocality":"Pune","addressRegion":"Maharashtra","addressCountry":"IN"},"alumniOf":"Jaywant College of Engineering and Polytechnics, Karad","knowsAbout":["WordPress","Elementor","WooCommerce","PHP","MySQL","Technical SEO","Java","Spring Boot","React","Shopify"],"sameAs":["https://www.linkedin.com/in/Shrutisuryawanshi-721","https://github.com/Shrutisurya"]}
+</script>
+<style>
+/* ===== DESIGN TOKENS — change colours here ===== */
+:root{
+  --bg:#0b1220; --surface:#071022; --card:#0f1724;
+  --fg:#e6eef6; --muted:#9aa3b2;
+  --accent:#6ee7b7; --accent-2:#60adf6;
+  --line:rgba(255,255,255,.08); --glass:rgba(15,23,36,.6);
+  --grad:linear-gradient(90deg,var(--accent),var(--accent-2));
+  --font:'Inter',system-ui,sans-serif;
+  --r:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:var(--font);background:var(--bg);color:var(--fg);line-height:1.6;overflow-x:hidden;
+  background-image:radial-gradient(800px 500px at 10% -10%,rgba(110,231,183,.12),transparent 60%),
+  radial-gradient(700px 500px at 100% 10%,rgba(96,173,246,.12),transparent 60%),
+  radial-gradient(600px 400px at 50% 110%,rgba(110,231,183,.06),transparent 60%);background-attachment:fixed}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+section{padding:96px 0}
+.eyebrow{color:var(--accent);font-weight:600;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase}
+h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;letter-spacing:-.02em;margin:.3rem 0 2.5rem}
+.grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;z-index:99;background:var(--card);padding:8px 12px}
+
+/* ===== BUTTONS ===== */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:12px;font-weight:600;font-size:.95rem;transition:transform .2s,box-shadow .2s,border-color .2s;cursor:pointer;border:0;font-family:inherit}
+.btn-primary{background:var(--grad);color:#06121f;box-shadow:0 8px 28px -8px rgba(110,231,183,.5)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 34px -8px rgba(96,173,246,.6)}
+.btn-ghost{border:1px solid var(--line);background:rgba(255,255,255,.03);color:var(--fg)}
+.btn-ghost:hover{border-color:var(--accent);transform:translateY(-2px)}
+
+/* ===== HEADER ===== */
+header{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(11,18,32,.7);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.brand{font-weight:800;font-size:1.15rem}.brand span{color:var(--accent)}
+.links{display:flex;gap:26px;list-style:none}
+.links a{position:relative;color:var(--muted);font-size:.92rem;font-weight:500;padding:4px 0;transition:color .2s}
+.links a::after{content:"";position:absolute;left:0;bottom:-2px;height:2px;width:100%;background:var(--grad);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.links a:hover,.links a.active{color:var(--fg)}.links a:hover::after,.links a.active::after{transform:scaleX(1)}
+.socials{display:flex;gap:8px}
+.icon-btn{width:38px;height:38px;display:grid;place-items:center;border-radius:50%;background:var(--glass);border:1px solid var(--line);color:var(--muted);transition:.2s}
+.icon-btn:hover{color:var(--accent);border-color:var(--accent);transform:translateY(-2px)}
+.icon-btn svg{width:17px;height:17px}
+.menu{display:none;background:none;border:1px solid var(--line);color:var(--fg);border-radius:10px;padding:7px 10px;font-size:1.1rem}
+
+/* ===== HERO ===== */
+.hero{padding:80px 0 100px}
+.hero-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:48px;align-items:center}
+.hello{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border:1px solid var(--line);border-radius:99px;background:var(--glass);color:var(--muted);font-size:.85rem}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px var(--accent)}
+h1{font-size:clamp(2.4rem,6vw,4.2rem);font-weight:800;line-height:1.05;letter-spacing:-.035em;margin:20px 0 12px}
+.subtitle{font-size:clamp(1rem,2vw,1.2rem);color:var(--fg);font-weight:600;opacity:.9}
+.lead{color:var(--muted);max-width:540px;margin:16px 0 24px;font-size:1.05rem}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:30px}
+.badge{padding:6px 13px;border-radius:99px;font-size:.82rem;font-weight:500;background:rgba(110,231,183,.08);border:1px solid rgba(110,231,183,.2);color:var(--accent)}
+.badge:nth-child(even){background:rgba(96,173,246,.08);border-color:rgba(96,173,246,.2);color:var(--accent-2)}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+
+.orbit{position:relative;width:min(420px,100%);aspect-ratio:1;margin:0 auto}
+.orbit::before{content:"";position:absolute;inset:12%;border-radius:50%;background:var(--grad);filter:blur(60px);opacity:.35}
+.ring{position:absolute;inset:6%;border-radius:50%;border:1px dashed rgba(255,255,255,.1)}
+.avatar{position:absolute;inset:22%;border-radius:50%;display:grid;place-items:center;background:linear-gradient(160deg,#13213a,var(--surface));border:2px solid transparent;
+  background-clip:padding-box;box-shadow:0 0 0 2px rgba(110,231,183,.35),0 30px 60px -20px rgba(0,0,0,.6);font-size:clamp(2.6rem,7vw,4rem);font-weight:800;overflow:hidden}
+/* REAL IMAGE HERE: replace "SS" with <img src="shruti.jpg" alt="Shruti Suryawanshi" style="width:100%;height:100%;object-fit:cover"> */
+.chip{position:absolute;padding:8px 14px;border-radius:12px;background:rgba(15,23,36,.85);border:1px solid var(--line);backdrop-filter:blur(8px);font-size:.82rem;font-weight:600;display:flex;align-items:center;gap:7px;box-shadow:0 10px 24px -10px rgba(0,0,0,.6);animation:float 6s ease-in-out infinite}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.chip:nth-child(odd) i{background:var(--accent-2)}
+.c1{top:4%;left:30%}.c2{top:22%;right:-2%;animation-delay:-1s}.c3{bottom:20%;right:-4%;animation-delay:-2s}
+.c4{bottom:2%;left:32%;animation-delay:-3s}.c5{bottom:24%;left:-6%;animation-delay:-4s}.c6{top:20%;left:-4%;animation-delay:-5s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+
+/* ===== SKILLS ===== */
+.skill-groups{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px}
+.group{background:var(--glass);border:1px solid var(--line);border-radius:var(--r);padding:24px}
+.group h3{font-size:1rem;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.group h3::before{content:"";width:22px;height:3px;border-radius:3px;background:var(--grad)}
+.pills{display:flex;flex-wrap:wrap;gap:9px}
+.pill{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:99px;background:var(--card);border:1px solid var(--line);font-size:.86rem;transition:.2s}
+.pill svg{width:14px;height:14px;color:var(--accent)}
+.pill:hover{transform:translateY(-3px);border-color:rgba(110,231,183,.45);box-shadow:0 8px 20px -10px rgba(110,231,183,.5)}
+
+/* ===== PROJECTS ===== */
+.projects{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:22px}
+.card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s,border-color .3s}
+.card:hover{transform:translateY(-8px);border-color:rgba(110,231,183,.4);box-shadow:0 0 0 1px rgba(96,173,246,.2),0 24px 50px -20px rgba(110,231,183,.35)}
+.thumb{height:160px;position:relative;display:grid;place-items:center;font-weight:800;font-size:1.3rem;color:rgba(255,255,255,.9);letter-spacing:-.02em}
+.thumb::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 23px,rgba(255,255,255,.04) 23px 24px),repeating-linear-gradient(90deg,transparent 0 23px,rgba(255,255,255,.04) 23px 24px)}
+.g1{background:radial-gradient(circle at 20% 20%,#6ee7b7,transparent 60%),linear-gradient(135deg,#0f3b46,#1b2a52)}
+.g2{background:radial-gradient(circle at 80% 30%,#60adf6,transparent 55%),linear-gradient(135deg,#14213d,#0c1830)}
+.g3{background:radial-gradient(circle at 30% 80%,#34d399,transparent 55%),linear-gradient(135deg,#1c2b25,#0f1d33)}
+.g4{background:radial-gradient(circle at 70% 70%,#38bdf8,transparent 55%),linear-gradient(135deg,#1e293b,#0b1324)}
+.body{padding:22px;display:flex;flex-direction:column;gap:12px;flex:1}
+.card h3{font-size:1.1rem}.card p{color:var(--muted);font-size:.92rem}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:.74rem;padding:4px 10px;border-radius:99px;border:1px solid var(--line);color:var(--muted)}
+.visit{margin-top:auto;color:var(--accent);font-weight:600;font-size:.9rem;display:inline-flex;gap:6px;align-items:center}
+.visit:hover{gap:10px}
+
+/* ===== TIMELINE ===== */
+.cols{display:grid;grid-template-columns:1.6fr 1fr;gap:40px}
+.timeline{position:relative;padding-left:30px;border-left:2px solid rgba(110,231,183,.2)}
+.item{position:relative;padding-bottom:34px}
+.item::before{content:"";position:absolute;left:-38px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(110,231,183,.15),0 0 18px var(--accent)}
+.when{font-size:.8rem;color:var(--accent-2);font-weight:600}
+.item h3{font-size:1.1rem;margin-top:4px}.role{color:var(--muted);font-size:.9rem;margin-bottom:10px}
+.item ul{padding-left:18px;color:var(--muted);font-size:.92rem;display:grid;gap:6px}
+.item li::marker{color:var(--accent)}
+.edu{background:var(--glass);border:1px solid var(--line);border-radius:var(--r);padding:26px;height:fit-content}
+.edu h3{margin:6px 0}.edu p{color:var(--muted);font-size:.92rem}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+.stat b{font-size:1.6rem;display:block}.stat span{font-size:.8rem;color:var(--muted)}
+
+/* ===== CONTACT ===== */
+.contact{display:grid;grid-template-columns:1fr 1.2fr;gap:36px}
+.contact-links{display:grid;gap:12px;margin-top:22px}
+.clink{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:14px;background:var(--glass);border:1px solid var(--line);transition:.2s}
+.clink:hover{border-color:var(--accent);transform:translateX(4px)}
+.clink .icon-btn{flex:none}.clink small{display:block;color:var(--muted);font-size:.78rem}
+form{background:rgba(15,23,36,.55);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:20px;padding:28px;display:grid;gap:16px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{font-size:.84rem;color:var(--muted);display:grid;gap:6px}
+input,textarea{font:inherit;color:var(--fg);background:rgba(7,16,34,.8);border:1px solid var(--line);border-radius:12px;padding:12px 14px;transition:border-color .2s,box-shadow .2s}
+input:focus,textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(110,231,183,.15)}
+textarea{min-height:130px;resize:vertical}
+.note{font-size:.85rem;color:var(--accent);min-height:1.2em}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.85rem;text-align:center}
+
+/* reveal on scroll */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.reveal.in{opacity:1;transform:none}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:900px){
+  .hero-grid,.cols,.contact{grid-template-columns:1fr}
+  .orbit{max-width:340px}
+  .menu{display:block}
+  .links{position:absolute;top:68px;left:0;right:0;flex-direction:column;gap:0;background:var(--surface);border-bottom:1px solid var(--line);display:none;padding:8px 22px}
+  .links.open{display:flex}.links a{display:block;padding:12px 0}
+  .socials{display:none}
+}
+@media (max-width:520px){.row{grid-template-columns:1fr}section{padding:72px 0}.chip{font-size:.72rem;padding:6px 10px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- Inline SVG icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-gh" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.2-3.1-.1-.4-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.6.2 2.8.1 3.2.8.8 1.2 1.9 1.2 3.1 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></symbol>
+  <symbol id="i-in" viewBox="0 0 24 24"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V21h-4V9Z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M3 5h18v14H3zM3 6l9 7 9-7"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2Z"/></symbol>
+  <symbol id="i-dot" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m5 12 5 5 9-10"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="m8 6-6 6 6 6M16 6l6 6-6 6"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="m20 20-4-4"/></g></symbol>
+  <symbol id="i-db" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></g></symbol>
+  <symbol id="i-cart" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 4h2l2.5 11h11L21 7H6"/><circle cx="9" cy="20" r="1.5"/><circle cx="17" cy="20" r="1.5"/></g></symbol>
+  <symbol id="i-wp" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9.5"/><path stroke-linejoin="round" d="m5 8 4 11 3-8 3 8 4-11"/></g></symbol>
+</svg>
+
+<header>
+  <nav class="wrap nav" aria-label="Main">
+    <a class="brand" href="#top">Shruti<span>.</span>dev</a>
+    <button class="menu" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">☰</button>
+    <ul class="links" id="nav-links">
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="socials">
+      <a class="icon-btn" href="https://github.com/Shrutisurya" target="_blank" rel="noopener" aria-label="GitHub"><svg><use href="#i-gh"/></svg></a>
+      <a class="icon-btn" href="https://www.linkedin.com/in/Shrutisuryawanshi-721" target="_blank" rel="noopener" aria-label="LinkedIn"><svg><use href="#i-in"/></svg></a>
+      <a class="icon-btn" href="mailto:shrutisuryawanshi072001@gmail.com" aria-label="Email"><svg><use href="#i-mail"/></svg></a>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+<!-- ===== HERO ===== -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="hello"><span class="dot"></span> Open to new projects · Pune, India</span>
+      <h1>Hi, I'm <span class="grad-text">Shruti Suryawanshi</span></h1>
+      <p class="subtitle">WordPress Developer | Technical SEO | Full-stack (PHP, Java)</p>
+      <p class="lead">I build fast, search-friendly WordPress websites that look sharp, rank well and are easy for clients to update — from custom themes to full-stack back-ends.</p>
+      <div class="badges">
+        <span class="badge">WordPress</span><span class="badge">Elementor</span><span class="badge">WooCommerce</span>
+        <span class="badge">PHP</span><span class="badge">SEO</span><span class="badge">React</span>
+      </div>
+      <div class="actions">
+        <a class="btn btn-primary" href="#projects">See my work →</a>
+        <a class="btn btn-ghost" href="resume.pdf" download>Download Resume ↓</a>
+      </div>
+    </div>
+    <div class="orbit" aria-hidden="true">
+      <div class="ring"></div>
+      <div class="avatar"><span class="grad-text">SS</span></div>
+      <span class="chip c1"><i></i>WordPress</span>
+      <span class="chip c2"><i></i>PHP</span>
+      <span class="chip c3"><i></i>WooCommerce</span>
+      <span class="chip c4"><i></i>React</span>
+      <span class="chip c5"><i></i>MySQL</span>
+      <span class="chip c6"><i></i>Elementor</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SKILLS ===== -->
+<section id="skills">
+  <div class="wrap">
+    <p class="eyebrow">Toolkit</p>
+    <h2>Skills I work with</h2>
+    <div class="skill-groups">
+      <div class="group reveal"><h3>WordPress &amp; CMS</h3><div class="pills">
+        <span class="pill"><svg><use href="#i-wp"/></svg>Theme Development</span><span class="pill"><svg><use href="#i-wp"/></svg>Plugin Customization</span>
+        <span class="pill"><svg><use href="#i-wp"/></svg>Elementor</span><span class="pill"><svg><use href="#i-wp"/></svg>WPBakery</span>
+        <span class="pill"><svg><use href="#i-wp"/></svg>Avada Builder</span><span class="pill"><svg><use href="#i-wp"/></svg>ACF</span>
+        <span class="pill"><svg><use href="#i-wp"/></svg>CPT UI</span><span class="pill"><svg><use href="#i-wp"/></svg>Contact Form 7</span>
+        <span class="pill"><svg><use href="#i-wp"/></svg>WP Mail SMTP</span></div></div>
+      <div class="group reveal"><h3>Technical SEO</h3><div class="pills">
+        <span class="pill"><svg><use href="#i-search"/></svg>Core Web Vitals</span><span class="pill"><svg><use href="#i-search"/></svg>Schema Markup</span>
+        <span class="pill"><svg><use href="#i-search"/></svg>XML Sitemaps</span><span class="pill"><svg><use href="#i-search"/></svg>robots.txt</span>
+        <span class="pill"><svg><use href="#i-search"/></svg>Canonical Tags</span><span class="pill"><svg><use href="#i-search"/></svg>Meta Tags</span>
+        <span class="pill"><svg><use href="#i-search"/></svg>Page Speed</span><span class="pill"><svg><use href="#i-search"/></svg>Crawlability</span></div></div>
+      <div class="group reveal"><h3>Front-end</h3><div class="pills">
+        <span class="pill"><svg><use href="#i-code"/></svg>HTML5</span><span class="pill"><svg><use href="#i-code"/></svg>CSS3</span>
+        <span class="pill"><svg><use href="#i-code"/></svg>Bootstrap 5</span><span class="pill"><svg><use href="#i-code"/></svg>JavaScript</span>
+        <span class="pill"><svg><use href="#i-code"/></svg>jQuery</span><span class="pill"><svg><use href="#i-code"/></svg>React</span>
+        <span class="pill"><svg><use href="#i-code"/></svg>UI/UX</span></div></div>
+      <div class="group reveal"><h3>Back-end</h3><div class="pills">
+        <span class="pill"><svg><use href="#i-db"/></svg>PHP</span><span class="pill"><svg><use href="#i-db"/></svg>MySQL</span>
+        <span class="pill"><svg><use href="#i-db"/></svg>Java</span><span class="pill"><svg><use href="#i-db"/></svg>Spring Boot</span>
+        <span class="pill"><svg><use href="#i-db"/></svg>Hibernate</span><span class="pill"><svg><use href="#i-db"/></svg>REST APIs</span>
+        <span class="pill"><svg><use href="#i-db"/></svg>Web Security</span></div></div>
+      <div class="group reveal"><h3>Shopify &amp; E-commerce</h3><div class="pills">
+        <span class="pill"><svg><use href="#i-cart"/></svg>WooCommerce</span><span class="pill"><svg><use href="#i-cart"/></svg>Shopify (Basic)</span>
+        <span class="pill"><svg><use href="#i-cart"/></svg>Liquid</span><span class="pill"><svg><use href="#i-cart"/></svg>Store Setup</span>
+        <span class="pill"><svg><use href="#i-cart"/></svg>Theme Customization</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJECTS ===== -->
+<section id="projects">
+  <div class="wrap">
+    <p class="eyebrow">Selected work</p>
+    <h2>Live client projects</h2>
+    <div class="projects">
+      <!-- REAL IMAGE HERE: replace each .thumb text with <img src="..." alt="..." style="width:100%;height:100%;object-fit:cover"> -->
+      <article class="card reveal"><div class="thumb g1">SVB Digital</div><div class="body">
+        <h3>SVB Digital Marketing Services</h3>
+        <p>Modern, responsive WordPress site for a digital marketing agency, with structured Elementor service sections for SEO, PPC, social and content.</p>
+        <div class="tags"><span class="tag">WordPress</span><span class="tag">Elementor</span><span class="tag">SEO</span></div>
+        <a class="visit" href="https://svbdigitalmarketingservices.com/" target="_blank" rel="noopener">Visit Site ↗</a></div></article>
+      <article class="card reveal"><div class="thumb g2">800 Silent Pod</div><div class="body">
+        <h3>800 Silent Pod</h3>
+        <p>Responsive WordPress site for a soundproof pod business, built with reusable WPBakery components and dynamic content.</p>
+        <div class="tags"><span class="tag">WordPress</span><span class="tag">WPBakery</span><span class="tag">Performance</span></div>
+        <a class="visit" href="https://800silentpod.com/" target="_blank" rel="noopener">Visit Site ↗</a></div></article>
+      <article class="card reveal"><div class="thumb g3">800 Pergola</div><div class="body">
+        <h3>800 Pergola</h3>
+        <p>Product and project showcase for a Dubai-based pergola company, with ACF and Custom Post Types for easy content updates.</p>
+        <div class="tags"><span class="tag">Elementor</span><span class="tag">ACF</span><span class="tag">CPT UI</span></div>
+        <a class="visit" href="https://800pergola.com/" target="_blank" rel="noopener">Visit Site ↗</a></div></article>
+      <article class="card reveal"><div class="thumb g4">Above The Rest</div><div class="body">
+        <h3>Above The Rest Building Services</h3>
+        <p>Lead-generation site for a New England building maintenance company, with service pages, project sections and quote requests.</p>
+        <div class="tags"><span class="tag">Avada Builder</span><span class="tag">Lead Gen</span><span class="tag">SEO</span></div>
+        <a class="visit" href="https://abovetherestbuildingservices.com/" target="_blank" rel="noopener">Visit Site ↗</a></div></article>
+      <article class="card reveal"><div class="thumb g2">Sai Datta Astro</div><div class="body">
+        <h3>Sai Datta Astro Pune</h3>
+        <p>Custom WordPress theme converted from an HTML/CSS template, with dynamic content workflows for simple updates.</p>
+        <div class="tags"><span class="tag">Custom Theme</span><span class="tag">ACF</span><span class="tag">WPBakery</span></div>
+        <a class="visit" href="https://saidattaastropune.com/" target="_blank" rel="noopener">Visit Site ↗</a></div></article>
+      <article class="card reveal"><div class="thumb g1">LED TV Expert</div><div class="body">
+        <h3>LED TV Expert</h3>
+        <p>Static design turned into a performance-optimised WordPress site with admin-friendly modules for easy editing.</p>
+        <div class="tags"><span class="tag">WordPress</span><span class="tag">Elementor</span><span class="tag">ACF</span></div>
+        <a class="visit" href="https://ledtvexpert.com/" target="_blank" rel="noopener">Visit Site ↗</a></div></article>
+      <article class="card reveal"><div class="thumb g3">Kohinoor Netting</div><div class="body">
+        <h3>Kohinoor Bird Netting</h3>
+        <p>Fast HTML5/CSS front-end with minimised assets, smooth interactions and clear calls to action for enquiries.</p>
+        <div class="tags"><span class="tag">HTML5</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
+        <a class="visit" href="https://kohinoorbirdnetting.com/" target="_blank" rel="noopener">Visit Site ↗</a></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EXPERIENCE & EDUCATION ===== -->
+<section id="experience">
+  <div class="wrap">
+    <p class="eyebrow">Journey</p>
+    <h2>Experience &amp; Education</h2>
+    <div class="cols">
+      <div class="timeline">
+        <div class="item reveal"><span class="when">Dec 2025 – Present</span>
+          <h3>SVB Digital Marketing Services</h3><p class="role">WordPress Developer</p>
+          <ul>
+            <li>Build responsive websites for pergola, medical billing, healthcare, real estate, e-commerce and education clients using WordPress, Elementor and Bootstrap 5.</li>
+            <li>Create custom themes and integrate ACF, CPT UI, Contact Form 7, WP Mail SMTP and Elementor to fit client goals.</li>
+            <li>Manage optimisation, performance and security for fast, reliable sites.</li>
+            <li>Apply Technical SEO: clean URLs, meta tags, XML sitemaps, schema markup and Core Web Vitals improvements.</li>
+          </ul></div>
+        <div class="item reveal"><span class="when">Jun 2025 – Nov 2025</span>
+          <h3>Digimedia Solutions Pvt Ltd</h3><p class="role">Web Developer</p>
+          <ul>
+            <li>Developed mobile-responsive interfaces with HTML, CSS, JavaScript, jQuery and Bootstrap 5.</li>
+            <li>Engineered server-side features in PHP and MySQL to improve performance and reliability.</li>
+            <li>Built custom WordPress themes and scalable, secure back-ends with Elementor and PHP.</li>
+            <li>Worked with designers, developers and project managers to deliver high-quality web solutions.</li>
+          </ul></div>
+        <div class="item reveal"><span class="when">Feb 2024 – Mar 2025</span>
+          <h3>157 Industries Pvt. Ltd</h3><p class="role">Full-stack Developer</p>
+          <ul>
+            <li>Developed hospital and billing modules, improving workflow efficiency by 30%.</li>
+            <li>Created RESTful APIs linking patient, billing and financial systems, boosting data accuracy by 40%.</li>
+            <li>Built scalable applications with Java, Spring Boot and Hibernate.</li>
+            <li>Led performance and security work that cut response time by 50%.</li>
+          </ul></div>
+      </div>
+      <aside class="edu reveal">
+        <p class="eyebrow">Education</p>
+        <h3>BTech, Computer Science</h3>
+        <p>Jaywant College of Engineering and Polytechnics, Karad</p>
+        <p class="when" style="margin-top:6px">2018 – 2022</p>
+        <div class="stats">
+          <div class="stat"><b class="grad-text">2.5+</b><span>Years total experience</span></div>
+          <div class="stat"><b class="grad-text">1.5+</b><span>Years in WordPress</span></div>
+          <div class="stat"><b class="grad-text">20+</b><span>Live client sites</span></div>
+          <div class="stat"><b class="grad-text">50%</b><span>Faster response times</span></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+  <div class="wrap contact">
+    <div class="reveal">
+      <p class="eyebrow">Contact</p>
+      <h2 style="margin-bottom:1rem">Let's build something <span class="grad-text">great</span></h2>
+      <p style="color:var(--muted)">Need a new WordPress site, a speed and SEO fix, or a custom feature? Send a message — I usually reply within a day.</p>
+      <div class="contact-links">
+        <a class="clink" href="mailto:shrutisuryawanshi072001@gmail.com"><span class="icon-btn"><svg><use href="#i-mail"/></svg></span><span><small>Email</small>shrutisuryawanshi072001@gmail.com</span></a>
+        <a class="clink" href="tel:+919322423847"><span class="icon-btn"><svg><use href="#i-phone"/></svg></span><span><small>Phone</small>+91 93224 23847</span></a>
+        <a class="clink" href="https://www.linkedin.com/in/Shrutisuryawanshi-721" target="_blank" rel="noopener"><span class="icon-btn"><svg><use href="#i-in"/></svg></span><span><small>LinkedIn</small>Shrutisuryawanshi-721</span></a>
+        <a class="clink" href="https://github.com/Shrutisurya" target="_blank" rel="noopener"><span class="icon-btn"><svg><use href="#i-gh"/></svg></span><span><small>GitHub</small>Shrutisurya</span></a>
+      </div>
+    </div>
+    <!-- Form opens the visitor's email app. To receive messages directly, set action to a service like Formspree. -->
+    <form class="reveal" id="contact-form" novalidate>
+      <div class="row">
+        <label>Name<input name="name" required autocomplete="name" placeholder="Your name"></label>
+        <label>Email<input name="email" type="email" required autocomplete="email" placeholder="you@example.com"></label>
+      </div>
+      <label>Subject<input name="subject" placeholder="New website project"></label>
+      <label>Message<textarea name="message" required placeholder="Tell me about your project..."></textarea></label>
+      <button class="btn btn-primary" type="submit" style="justify-self:start">Send message →</button>
+      <p class="note" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">© <span id="yr"></span> Shruti Suryawanshi · WordPress Developer, Pune</div></footer>
+
+<script>
+// Year
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+// Mobile menu
+const menu = document.querySelector('.menu'), links = document.getElementById('nav-links');
+menu.addEventListener('click', () => { const o = links.classList.toggle('open'); menu.setAttribute('aria-expanded', o); });
+links.addEventListener('click', e => { if (e.target.tagName === 'A') { links.classList.remove('open'); menu.setAttribute('aria-expanded', false); } });
+
+// Reveal on scroll + active nav link
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+const navLinks = [...links.querySelectorAll('a')];
+const so = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
+}), { rootMargin: '-45% 0px -50% 0px' });
+document.querySelectorAll('main section[id]').forEach(s => so.observe(s));
+
+// Contact form -> opens email app
+document.getElementById('contact-form').addEventListener('submit', e => {
+  e.preventDefault();
+  const f = e.target, note = f.querySelector('.note');
+  if (!f.checkValidity()) { note.textContent = 'Please fill in your name, a valid email and a message.'; return; }
+  const d = new FormData(f);
+  const body = `${d.get('message')}\n\n— ${d.get('name')} (${d.get('email')})`;
+  location.href = `mailto:shrutisuryawanshi072001@gmail.com?subject=${encodeURIComponent(d.get('subject') || 'Portfolio enquiry')}&body=${encodeURIComponent(body)}`;
+  note.textContent = 'Opening your email app…';
+});
+</script>
+</body>
+</html>
